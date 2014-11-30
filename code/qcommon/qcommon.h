@@ -241,6 +241,12 @@ extern int demo_protocols[];
 #ifndef MASTER_SERVER_NAME
 #define MASTER_SERVER_NAME	"master.urbanterror.info"
 #endif
+#ifndef MASTER2_SERVER_NAME
+#define MASTER2_SERVER_NAME	"master2.urbanterror.info"
+#endif
+#ifndef MASTER3_SERVER_NAME
+#define MASTER3_SERVER_NAME	"master3.urbanterror.info"
+#endif
 #ifndef AUTHORIZE_SERVER_NAME
 #define	AUTHORIZE_SERVER_NAME	"authorize.urbanterror.info"
 #endif
@@ -531,6 +537,13 @@ we need to deal with all sorts of directory and seperator char
 issues.
 ==============================================================
 */
+
+#define MAX_ZPATH			256
+#define	MAX_SEARCH_PATHS	4096
+#define MAX_FILEHASH_SIZE	1024
+
+extern int foreignQVMsFound;
+extern char foreignQVMNames[MAX_ZPATH][MAX_SEARCH_PATHS];
 
 // referenced flags
 // these are in loop specific order so don't change the order
@@ -876,7 +889,10 @@ void CL_InitKeyCommands( void );
 void CL_Init( void );
 void CL_Disconnect( qboolean showMainMenu );
 void CL_Shutdown( void );
+
 void CL_Frame( int msec );
+qboolean CL_IsDownloading(void);
+
 qboolean CL_GameCommand( void );
 void CL_KeyEvent (int key, qboolean down, unsigned time);
 

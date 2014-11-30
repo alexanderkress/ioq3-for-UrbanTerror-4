@@ -177,6 +177,7 @@ typedef struct client_s {
 	
 	int				oldServerTime;
 	qboolean			csUpdated[MAX_CONFIGSTRINGS+1];	
+	int             numcmds;    // number of client commands so far (in this time period), for sv_floodprotect
 } client_t;
 
 //=============================================================================
@@ -297,6 +298,7 @@ extern	cvar_t	*sv_newpurelist;
 extern	cvar_t	*sv_floodProtect;
 extern	cvar_t	*sv_lanForceRate;
 extern	cvar_t	*sv_strictAuth;
+extern	cvar_t	*sv_clientsPerIp;
 
 extern	cvar_t	*sv_demonotice;
 

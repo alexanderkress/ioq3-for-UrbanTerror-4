@@ -252,6 +252,7 @@ typedef struct {
 	int			netType;
 	int			gameType;
 	int		  	clients;
+	int         bots;
 	int		  	maxClients;
 	int			minPing;
 	int			maxPing;
@@ -384,10 +385,14 @@ extern	cvar_t	*cl_altTab;
 extern  cvar_t	*cl_auth_engine;
 extern  cvar_t  *cl_auth;
 extern  cvar_t  *authc;
+extern  cvar_t  *authl; // Auth Login
 #endif
 
 extern  cvar_t  *cl_mouseAccelOffset;
 extern  cvar_t  *cl_mouseAccelStyle;
+
+#define CL_MAX_MASTER_SERVERS 4
+extern	cvar_t	*cl_masterServers[CL_MAX_MASTER_SERVERS];
 
 //=================================================
 
